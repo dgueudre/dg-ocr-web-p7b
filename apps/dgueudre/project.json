@@ -1,0 +1,81 @@
+{
+  "name": "dgueudre",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/dgueudre/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/dgueudre",
+        "index": "apps/dgueudre/src/index.html",
+        "baseHref": "/",
+        "main": "apps/dgueudre/src/main.tsx",
+        "polyfills": "apps/dgueudre/src/polyfills.ts",
+        "tsConfig": "apps/dgueudre/tsconfig.app.json",
+        "assets": ["apps/dgueudre/src/favicon.ico", "apps/dgueudre/src/assets"],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/dgueudre/src/environments/environment.ts",
+              "with": "apps/dgueudre/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "dgueudre:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "dgueudre:build:development"
+        },
+        "production": {
+          "buildTarget": "dgueudre:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/dgueudre/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/dgueudre/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
