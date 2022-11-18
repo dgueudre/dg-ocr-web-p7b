@@ -1,4 +1,20 @@
-export const data = [
+export interface Accommodation {
+  id: string;
+  title: string;
+  cover: string;
+  pictures: string[];
+  description: string;
+  host: {
+    name: string;
+    picture: string;
+  };
+  rating: string;
+  location: string;
+  equipments: string[];
+  tags: string[];
+}
+
+export const data: Accommodation[] = [
   {
     id: 'c67ab8a7',
     title: 'Appartement cosy',
