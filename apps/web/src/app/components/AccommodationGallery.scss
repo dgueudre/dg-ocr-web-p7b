@@ -1,6 +1,16 @@
 ul.accommodation-gallery {
+  --gap: 50px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  padding: var(--gap);
+  background: #F7F7F7;
+  border-radius: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  ul.accommodation-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
 }
