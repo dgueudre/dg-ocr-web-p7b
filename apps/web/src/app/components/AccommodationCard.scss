@@ -1,7 +1,4 @@
-import { Accommodation } from '@kasa/data';
-import styled from 'styled-components';
-
-const Card = styled.div`
+div.accommodation-card {
   display: grid;
   align-items: flex-end;
   height: 100%;
@@ -32,13 +29,4 @@ const Card = styled.div`
     content: "";
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
   }
-`;
-
-export default function AccommodationCard({ accommodation }:{ accommodation: Accommodation }) {
-  return (
-    <Card>
-      <p>{accommodation.title}</p>
-      <img src={accommodation.cover} alt="" srcSet="" />
-    </Card>
-  );
 }

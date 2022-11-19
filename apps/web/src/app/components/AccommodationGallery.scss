@@ -1,0 +1,10 @@
+ul.accommodation-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &>li {
+    margin: 1.6%;
+    width: 30%;
+  }
+}
