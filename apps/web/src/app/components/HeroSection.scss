@@ -1,0 +1,27 @@
+.hero-section {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  height: 223px;
+  background: #000000;
+  border-radius: 25px;
+
+  &>* {
+    grid-area: 1/1;
+    border-radius: 25px;
+  }
+
+  img {
+    height: inherit;
+    width: 100%;
+    opacity: 0.7;
+    object-fit: cover;
+  }
+
+  h1 {
+    z-index: 2;
+    color: white;
+    margin: 0;
+  }
+}

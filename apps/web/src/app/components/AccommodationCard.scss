@@ -3,21 +3,24 @@ div.accommodation-card {
   align-items: flex-end;
   position: relative;
   height: 340px;
-  overflow: hidden;
   background-color: #FF6060;
   border-radius: 10px;
 
-  &>img,
+  &>*,
   &::after {
     grid-area: 1/1;
-    height: 100%;
+    border-radius: 10px;
+  }
+
+  &>img,
+  &::after {
+    height: inherit;
     width: 100%;
   }
 
   &>img {
     z-index: 0;
     object-fit: cover;
-    overflow: hidden;
     opacity: 0.95;
   }
 
@@ -28,7 +31,6 @@ div.accommodation-card {
   }
 
   &>p {
-    grid-area: 1/1;
     z-index: 2;
     color: white;
     width: 50%;
