@@ -5,20 +5,20 @@ div.accommodation-card {
   overflow: hidden;
   background-color: #FF6060;
   border-radius: 10px;
-  
+
   &>p {
     grid-area: 1/1;
     z-index: 2;
     color: white;
   }
-  
+
   &>img {
     grid-area: 1/1;
     z-index: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* opacity: 0.95; */
+    opacity: 0.95;
   }
 
   &::after {

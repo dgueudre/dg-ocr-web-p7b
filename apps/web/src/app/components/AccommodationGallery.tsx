@@ -8,7 +8,7 @@ export default function AccommodationGallery(
   return (
     <ul className="accommodation-gallery">
       {accommodations.map(((accommodation) => (
-        <li>
+        <li key={accommodation.id}>
           <AccommodationCard accommodation={accommodation} />
         </li>
       )))}

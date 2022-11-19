@@ -1,10 +1,6 @@
 ul.accommodation-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  &>li {
-    margin: 1.6%;
-    width: 30%;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
 }
