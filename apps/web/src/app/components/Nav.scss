@@ -1,0 +1,15 @@
+nav.navigation {
+    &>ul {
+        display: flex;
+    }
+
+    & a {
+        font-size: larger;
+        padding: 10px;
+        color: var(--color-primary);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
